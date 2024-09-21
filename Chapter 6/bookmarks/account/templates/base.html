@@ -24,7 +24,7 @@
                     <a href= "#" >People</a>
                 </li>
 
-            </ul> 
+            </ul>
 
         {% endif %}
 
@@ -35,13 +35,13 @@
                 <button type="submit">Logout</button>
                 {% csrf_token %}
             </form>
-        {% else %} 
-            <a href="{% url "login" %}">Login</a> 
+        {% else %}
+            <a href="{% url "login" %}">Login</a>
         {% endif %}
         </span>
 
     </div>
-    
+
     {% if messages %}
         <ul class="messages" >
             {% for message in messages %}
@@ -50,14 +50,30 @@
                     <a href="#" class="close">x</a>
 
                 </li>
+                <li {% if section=="images" %} class="selected" {% endif %} >
+                  <a href="{% url "images:list" %}">Images</a>
+                </li>
             {% endfor %}
         </ul>
     {% endif %}
 
     <div id="content">
-            {% block content %}        
+            {% block content %}
             {% endblock %}
     </div>
+
+<script type="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script>
+
+
+    Const csrftoken = Cookies.get('csrftoken')
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // DOM Loaded
+      {% block domready %}
+      {% endblock %}
+    })
+
+</script>
 
 </body>
 </html>
