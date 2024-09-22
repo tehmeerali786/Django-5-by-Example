@@ -73,24 +73,23 @@ def image_list(request):
     try:
         images = paginator.page(page)
     except PageNotAnInteger:
-        # if page is not an integer deliver the first page
+        # If page is not an integer deliver the first page
         images = paginator.page(1)
     except EmptyPage:
         if images_only:
-            # If AJAX request page out of the range
+            # If AJAX request and page out of range
             # return an empty page
             return HttpResponse('')
-        # if page out of range return last page of results
+        # If page out of range return last page of results
         images = paginator.page(paginator.num_pages)
-    if image_only:
+    if images_only:
         return render(
-        request,
-        'images/image/list_images.html',
-        {'section': 'images', 'images': images}
+            request,
+            'images/image/list_images.html',
+            {'section': 'images', 'images': images},
         )
-
     return render(
-    request,
-    'images/image/list.html',
-    {'section': 'images', 'images': images}
+        request,
+        'images/image/list.html',
+        {'section': 'images', 'images': images},
     )
