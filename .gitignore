@@ -8,6 +8,11 @@ Chapter 6/bookmarks/db.sqlite3
 Chapter 6/bookmarks/.env
 Chapter 6/bookmarks/cert.crt
 Chapter 6/bookmarks/cert.key
+Chapter 7/bookmarks/db.sqlite3
+Chapter 7/bookmarks/.env
+Chapter 7/bookmarks/cert.crt
+Chapter 7/bookmarks/cert.key
 Chapter06/
+Chapter07/
 
 *.sqlite3
