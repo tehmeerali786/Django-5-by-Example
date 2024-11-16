@@ -1,4 +1,4 @@
-{% extends "shopt/base.html" %}
+{% extends "shop/base.html" %}
 {% load static %}
 
 {% block title %}
@@ -22,6 +22,8 @@
   <tbody>
     {% for item in cart %}
       {% with product=item.product %}
+
+
         <tr>
           <td>
             <a href="{{ product.get_absolute_url }}">
@@ -29,7 +31,15 @@
             </a>
           </td>
           <td>{{ product.name }}</td>
-          <td>{{ item.quantity }}</td>
+          <td>
+            <form action="{% url "cart:cart_add" product.id  %}" method="post">
+              {{ item.update_quantity_form.quantity }}
+              {{ item.update_quantity_form.override }}
+              <input type="submit" value="Update">
+              {% csrf_token %}
+
+            </form>
+          </td>
           <td>
             <form class="" action="{% url "cart:cart_remove" product.id%}" method="post">
               <input type="submit" name="" value="Remove">

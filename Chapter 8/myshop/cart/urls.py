@@ -1,4 +1,4 @@
-from djang.urls import path
+from django.urls import path
 from . import views
 
 app_name = 'cart'
@@ -9,7 +9,7 @@ urlpatterns = [
         path('add/<int:product_id>/', views.cart_add, name='cart_add'),
         path(
             'remove/<int:product_id>/',
-            remove.cart_remove,
+            views.cart_remove,
             name='cart_remove',
         ),
 
