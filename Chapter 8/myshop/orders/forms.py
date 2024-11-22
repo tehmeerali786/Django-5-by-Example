@@ -10,8 +10,6 @@ class OrderCreateForm(forms.ModelForm):
             'last_name',
             'email',
             'address',
-            'postal_code',
+            'post_code',
             'city',
         ]
-
-        

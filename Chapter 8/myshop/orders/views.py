@@ -5,7 +5,7 @@ from .models import OrderItem
 
 # Create your views here.
 
-def create_order(request):
+def order_create(request):
     cart = Cart(request)
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
