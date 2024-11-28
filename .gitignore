@@ -1,0 +1,24 @@
+
+Chapter 4/bookmarks/db.sqlite3
+Chapter 5/bookmarks/db.sqlite3
+Chapter 5/bookmarks/.env
+Chapter 5/bookmarks/cert.crt
+Chapter 5/bookmarks/cert.key
+Chapter 6/bookmarks/db.sqlite3
+Chapter 6/bookmarks/.env
+Chapter 6/bookmarks/cert.crt
+Chapter 6/bookmarks/cert.key
+Chapter 7/bookmarks/db.sqlite3
+Chapter 7/bookmarks/.env
+Chapter 7/bookmarks/cert.crt
+Chapter 7/bookmarks/cert.key
+Chapter 8/myshop/db.sqlite3
+Chapter 8/myshop/.env
+Chapter 9/myshop/db.sqlite3
+Chapter 9/myshop/.env
+
+Chapter08/
+Chapter09/
+
+
+*.sqlite3
