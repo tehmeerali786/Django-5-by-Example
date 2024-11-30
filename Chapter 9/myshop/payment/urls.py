@@ -3,7 +3,7 @@ from . import views
 
 app_name = 'payment'
 
-url_patterns = [
+urlpatterns = [
 
         path('process/', views.payment_process, name='process'),
         path('completed/', views.payment_completed, name='completed'),
