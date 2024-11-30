@@ -4,7 +4,7 @@ import stripe
 from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
-from orders.models import models
+from orders.models import Order
 
 
 # create the Stripe instance
@@ -36,7 +36,7 @@ def payment_process(request):
         }
 
         # add order idems to the Stripe checkout session
-        for item in order.item.all():
+        for item in order.items.all():
             session_data['line_items'].append({
 
                 'price_data': {
@@ -64,4 +64,4 @@ def payment_completed(request):
     return render(request, 'payment/completed.html')
 
 def payment_canceled(request):
-    return render('payment/conceled.html')
+    return render(request,'payment/conceled.html')

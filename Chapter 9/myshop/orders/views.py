@@ -26,7 +26,7 @@ def order_create(request):
             # set the order in the session
             request.session['order_id'] = order.id
             # redirect for payment
-            return render('payment:process')
+            return redirect('payment:process')
     else:
         form = OrderCreateForm()
     return render(
