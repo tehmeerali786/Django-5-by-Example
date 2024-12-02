@@ -13,7 +13,7 @@ def stripe_webhook(request):
 
 
     try:
-        event = stripe.Webhook.construnct_event(
+        event = stripe.Webhook.construct_event(
             payload, sig_header, settings.STRIPE_WEBHOOK_SECRET
         )
 
@@ -26,6 +26,7 @@ def stripe_webhook(request):
 
 
     if event.type == 'checkout.session.completed':
+        session = event.data.object
         if (
             session.mode == 'payment'
             and session.payment_status == 'paid'
@@ -42,5 +43,4 @@ def stripe_webhook(request):
             order.paid = True
             order.save()
 
-
-    return HttpResonpse(status=200)
+    return HttpResponse(status=200)
